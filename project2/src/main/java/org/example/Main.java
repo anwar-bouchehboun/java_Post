@@ -1,31 +1,44 @@
 package org.example;
 
-import org.example.db.DB;
+import org.example.Menu.MenuPost;
 import org.example.dto.PostDto;
 import org.example.dto.RespDTO.PostDtoResp;
 import org.example.services.impl.PostServicesImpl;
 
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Scanner;
+
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws SQLException {
+        Scanner choixMenu = new Scanner(System.in);
 
-    PostServicesImpl imp = new PostServicesImpl();
+        while (true){
+            System.out.println("\nMain Menu:");
+            System.out.println("1. Gestion Post");
+            System.out.println("2. Exit");
+            System.out.print("Choose an option: ");
+            String mainOption = choixMenu.nextLine().trim();
+            switch (mainOption){
+                case "1": // Gestion Post Menu
+                    PostServicesImpl imp = new PostServicesImpl();
 
-      PostDto create = new PostDto();
-      create.setTitle("bfgggggggggg");
-      create.setDesc("azertyuiop sdfghjk sdfghj");
-      imp.CreatePost(create);
-    //update
-    /*    PostDtoResp updatedPost = new PostDtoResp();
-        updatedPost.setId(2);
-        updatedPost.setTitle("Updated Post Title");
-        updatedPost.setDesc("This is the updated description for the post.");
-   imp.UpdatePost(updatedPost);*/
+                    MenuPost Menu = new MenuPost(imp);
+
+                    Menu.start();
+                    break;
+                case "2": // Exit
+                    System.out.println("Exiting...");
+                    return;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    break;
+            }
+        }
+
+
 
 
 

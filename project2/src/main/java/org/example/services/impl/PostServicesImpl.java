@@ -45,7 +45,7 @@ public class PostServicesImpl implements PostInterface {
 
         // Print the table header
         System.out.printf("%-10s | %-20s | %-50s | %n", "ID", "Title", "Description");
-        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------");
 
         // Print each entry in a formatted way
         for (Map.Entry<Integer, PostDtoResp> entry : posts.entrySet()) {
