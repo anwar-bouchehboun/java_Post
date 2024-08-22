@@ -11,4 +11,7 @@ public interface PostInterface {
   HashMap<Integer, PostDtoResp> GetDataPost();
   void DisplayData();
   void CreatePost(PostDto post);
+  void UpdatePost(PostDtoResp post);
+  void DeletePost(PostDtoResp post);
+
 }

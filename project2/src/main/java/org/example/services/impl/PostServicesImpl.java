@@ -53,7 +53,7 @@ public class PostServicesImpl implements PostInterface {
             System.out.printf("%-10d | %-20s | %-50s | %n", post.getId(), post.getTitle(), post.getDesc());
         }
     }
-
+//create post
     public void CreatePost(PostDto post) {
         try {
             String sql = "INSERT INTO post (`title`, `desc`) VALUES (?, ?)";
@@ -65,12 +65,52 @@ public class PostServicesImpl implements PostInterface {
 
             if (rowsAffected > 0) {
                 System.out.println("Post created successfully.");
+                this.DisplayData();
+
             } else {
                 System.out.println("Failed to create post.");
             }
 
         } catch (SQLException e) {
             throw new RuntimeException("Error creating post", e);
+        }
+    }
+    // update Poste
+   public void UpdatePost(PostDtoResp post){
+   try {
+       String sql = "UPDATE post SET title = ?, `desc` = ? WHERE id = ?";
+       PreparedStatement preparedStatement=connection.prepareStatement(sql);
+       preparedStatement.setString(1, post.getTitle());
+       preparedStatement.setString(2, post.getDesc());
+       preparedStatement.setInt(3, post.getId());
+       int update = preparedStatement.executeUpdate();
+       if (update > 0) {
+           System.out.println("Post update successfully.");
+           this.DisplayData();
+
+       } else {
+           System.out.println("Failed to update post.");
+       }
+       } catch (Exception e) {
+    throw new RuntimeException(e);
+       }
+   }
+
+    @Override
+    public void DeletePost(PostDtoResp post) {
+        try {
+            String sql="DELETE FROM `post` WHERE id = ?";
+            PreparedStatement preparedStatement =connection.prepareStatement(sql);
+            preparedStatement.setInt(1,post.getId());
+            int delete = preparedStatement.executeUpdate();
+            if (delete > 0) {
+                System.out.println("Post delete successfully.");
+               this.DisplayData();
+            } else {
+                System.out.println("Failed to delete post.");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }

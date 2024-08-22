@@ -16,10 +16,21 @@ public class Main {
 
     PostServicesImpl imp = new PostServicesImpl();
 
-    imp.DisplayData();
-          //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        //System.out.printf(imp.GetDataPost());
+      PostDto create = new PostDto();
+      create.setTitle("tezrtyui");
+      create.setDesc("azertyuiop sdfghjk sdfghj");
+      imp.CreatePost(create);
+    //update
+    /*    PostDtoResp updatedPost = new PostDtoResp();
+        updatedPost.setId(2);
+        updatedPost.setTitle("Updated Post Title");
+        updatedPost.setDesc("This is the updated description for the post.");
+   imp.UpdatePost(updatedPost);*/
+
+
+
+
+
 
 
     }

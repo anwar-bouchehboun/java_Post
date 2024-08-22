@@ -1,7 +1,6 @@
 package org.example.db;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
