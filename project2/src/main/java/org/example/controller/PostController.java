@@ -1,5 +1,4 @@
-package org.example.Menu;
-
+package org.example.controller;
 
 import org.example.dto.PostDto;
 import org.example.dto.RespDTO.PostDtoResp;
@@ -7,11 +6,12 @@ import org.example.services.impl.PostServicesImpl;
 
 import java.util.Scanner;
 
-public class MenuPost {
-  private  final PostServicesImpl postServices;
-  private  final Scanner scanner;
+public class PostController {
 
-    public MenuPost() {
+    private  final PostServicesImpl postServices;
+    private  final Scanner scanner;
+
+    public PostController() {
         this.postServices = new PostServicesImpl();
         this.scanner = new Scanner(System.in);
     }

@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.Menu.MenuPost;
-import org.example.services.impl.PostServicesImpl;
+import org.example.controller.PostController;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -20,10 +20,7 @@ public class Main {
             String mainOption = choixMenu.nextLine().trim();
             switch (mainOption){
                 case "1": // Gestion Post Menu
-                    PostServicesImpl postServices = new PostServicesImpl();
-
-                    MenuPost Menu = new MenuPost(postServices);
-
+                    PostController Menu = new PostController();
                     Menu.start();
                     break;
                 case "2": // Exit
