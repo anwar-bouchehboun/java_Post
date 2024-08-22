@@ -17,7 +17,7 @@ public class Main {
     PostServicesImpl imp = new PostServicesImpl();
 
       PostDto create = new PostDto();
-      create.setTitle("tezrtyui");
+      create.setTitle("bfgggggggggg");
       create.setDesc("azertyuiop sdfghjk sdfghj");
       imp.CreatePost(create);
     //update
