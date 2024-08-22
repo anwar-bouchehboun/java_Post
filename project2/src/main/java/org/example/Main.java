@@ -13,16 +13,16 @@ public class Main {
         Scanner choixMenu = new Scanner(System.in);
 
         while (true){
-            System.out.println("\nMain Menu:");
+            System.out.println("\n--------------Main Menu-------------------");
             System.out.println("1. Gestion Post");
             System.out.println("2. Exit");
             System.out.print("Choose an option: ");
             String mainOption = choixMenu.nextLine().trim();
             switch (mainOption){
                 case "1": // Gestion Post Menu
-                    PostServicesImpl imp = new PostServicesImpl();
+                    PostServicesImpl postServices = new PostServicesImpl();
 
-                    MenuPost Menu = new MenuPost(imp);
+                    MenuPost Menu = new MenuPost(postServices);
 
                     Menu.start();
                     break;
