@@ -1,16 +1,13 @@
 package org.example;
 
 import org.example.Menu.MenuPost;
-import org.example.dto.PostDto;
-import org.example.dto.RespDTO.PostDtoResp;
 import org.example.services.impl.PostServicesImpl;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) throws SQLException {
         Scanner choixMenu = new Scanner(System.in);
