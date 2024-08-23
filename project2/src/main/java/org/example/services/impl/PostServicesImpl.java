@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class PostServicesImpl implements PostInterface {
 
-   private Connection connection;
+    private final Connection connection;
     public PostServicesImpl() {
         connection = DB.getConnerction();
     }

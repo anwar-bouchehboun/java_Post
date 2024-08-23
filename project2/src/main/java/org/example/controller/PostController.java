@@ -35,7 +35,7 @@ public class PostController {
                     postServices.DisplayData();
                     break;
                 case "exit":
-                    System.out.println("Exiting...");
+                    System.out.println("Exiting Post...");
                     return;
                 default:
                     System.out.println("Invalid operation. Please try again.");
