@@ -67,7 +67,7 @@ public int getPostCount(int id) {
             }
         }
     } catch (SQLException e) {
-        e.printStackTrace();
+        System.out.println("Post id Faild .");
     }
     return 0;
 }
