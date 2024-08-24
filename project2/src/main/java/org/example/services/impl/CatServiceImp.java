@@ -100,4 +100,44 @@ public int getPostCount(int id) {
 
 
     }
+
+    public void UpdateCat(CatDto Cateog){
+        try {
+            String sql = "UPDATE categorie SET category = ?, postid = ? WHERE id = ?";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,Cateog.getCategory());
+            preparedStatement.setInt(2, Cateog.getPostid());
+            preparedStatement.setInt(3, Cateog.getId());
+            int update = preparedStatement.executeUpdate();
+            if (update > 0) {
+                System.out.println("Cate update successfully.");
+                this.DisplayDataCat();
+
+            } else {
+                System.out.println("Failed to update post.");
+            }
+        } catch (Exception e) {
+            System.out.println("Failed to update cate For System.");
+        }
+    }
+
+    public void DeleteCat(CatDto Cateog){
+
+        try {
+            String sql="DELETE FROM `categorie` WHERE id = ?";
+            PreparedStatement preparedStatement =connection.prepareStatement(sql);
+            preparedStatement.setInt(1,Cateog.getId());
+            int delete = preparedStatement.executeUpdate();
+            if (delete > 0) {
+                System.out.println("Cate delete successfully.");
+                this.DisplayDataCat();
+            } else {
+                System.out.println("Failed to delete Cat.");
+            }
+        } catch (Exception e) {
+            System.out.println("Failed to Delete Cat For System.");
+        }
+
+    }
+
 }

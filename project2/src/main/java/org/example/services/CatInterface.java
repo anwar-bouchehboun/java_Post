@@ -14,6 +14,6 @@ HashMap<Integer, CateDtoResp> GetDataCate();
 void DisplayDataCat();
  void CreateCat(CatDto Cateog) throws SQLException;
  int getPostCount(int id);
-   /*    void UpdateCat(CateDtoResp post);
-    void DeleteCat(CateDtoResp post);*/
+ void UpdateCat(CatDto Cateog);
+ void DeleteCat(CatDto Cateog);
 }

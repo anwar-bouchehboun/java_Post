@@ -1,6 +1,8 @@
 package org.example.controller;
 
 import org.example.dto.CatDto;
+import org.example.dto.RespDTO.CateDtoResp;
+import org.example.dto.RespDTO.PostDtoResp;
 import org.example.services.impl.CatServiceImp;
 
 import java.util.Scanner;
@@ -26,10 +28,10 @@ public class CateController {
                     CreateCate();
                     break;
                 case "update":
-                   // UpdatePost();
+                    UpdateCate();
                     break;
                 case "delete":
-                 //   DeletePost();
+                   DeleteCat();
                     break;
                 case "display":
                     catServiceImp.DisplayDataCat();
@@ -48,13 +50,32 @@ public class CateController {
     private void CreateCate() {
         CatDto catDto = new CatDto();
 
-        System.out.print("Enter post Categorie: ");
+        System.out.print("Enter  Categorie: ");
         catDto.setCategory(choixCategorie.nextLine());
 
         System.out.print("Enter post ID: ");
         catDto.setPostid(Integer.parseInt(choixCategorie.nextLine()));
 
         catServiceImp.CreateCat(catDto);
+    }
+    private  void UpdateCate(){
+        CatDto cateDto= new CatDto();
+        System.out.print("Enter  Categorie: ");
+        cateDto.setCategory(choixCategorie.nextLine());
+        System.out.print("Enter post ID: ");
+        cateDto.setPostid(Integer.parseInt(choixCategorie.nextLine()));
+        System.out.print("Enter where Categorie ID: ");
+        cateDto.setId(Integer.parseInt(choixCategorie.nextLine()));
+        catServiceImp.UpdateCat(cateDto);
+
+    }
+    public void DeleteCat(){
+        CatDto cateDto = new CatDto();
+
+        System.out.print("Enter Cate ID to delete: ");
+        cateDto.setId(Integer.parseInt(choixCategorie.nextLine()));
+
+        catServiceImp.DeleteCat(cateDto);
     }
 
 }
